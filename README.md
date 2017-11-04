@@ -1,3 +1,45 @@
+# WxMock
+微信小程序数据模拟
+##### 使用方法
+
+* 1. copy文件 dist/mock.js dist/WxMock.js 到小程序工程根目录的 utils目录下
+* 2. 在app.js 引入 WxMock 代码 
+```javascript 
+var Mock = require("./utils/WxMock.js"); 
+```
+* 3. 在app.js中书写需要模拟的接口及返回结构
+```javascript
+ Mock.mock('https://xxx.com/users',{
+        "code":200,
+        "data|1-20":[
+            {
+                "name":function() {
+                  return Mock.Random.cname()
+                },
+                "lastLogin":function() {
+                  return Mock.Random.datetime()
+                }
+            }
+        ]
+ })
+  Mock.mock('https://xxx.com/user/delete',{
+         "code":200,
+         "message":"s删除成功"
+  })
+```
+* 4. 只要在 wx.request 中使用url为 mock对应的地址 就会返回响应mock数据
+```javascript
+wx.request({
+  url: 'https://xxx.com/users',
+  success:function(res){
+    console.log('https://xxx.com/users',res);
+  }
+})
+```
+
+Mock.js 使用方式见 http://mockjs.com/examples.html
+
+
 # Mock.js
 <!-- 模拟请求 & 模拟数据 -->
 [![Build Status](https://api.travis-ci.org/nuysoft/Mock.png?branch=master)](http://travis-ci.org/nuysoft/Mock)
