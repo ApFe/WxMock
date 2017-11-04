@@ -1,5 +1,5 @@
 # WxMock
-微信小程序数据模拟
+微信小程序 - 模拟数据工具
 ##### 使用方法
 
 * 1. copy文件 dist/mock.js dist/WxMock.js 到小程序工程根目录的 utils目录下
