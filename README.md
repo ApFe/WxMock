@@ -2,7 +2,10 @@
 微信小程序 - 模拟数据工具
 ##### 使用方法
 
-* 1. copy文件 dist/mock.js dist/WxMock.js 到小程序工程根目录的 utils目录下
+# 使用代码片段分享 [wechatide://minicode/wCHxXXmf6OYz](wechatide://minicode/wCHxXXmf6OYz)
+
+
+* 1. copy文件 https://raw.githubusercontent.com/webx32/WxMock/1.0.1-beta3/dist/mock.js （dist/mock.js此文件小程序不支持） dist/WxMock.js 到小程序工程根目录的 utils目录下
 * 2. 在app.js 引入 WxMock 代码 
 ```javascript 
 var Mock = require("./utils/WxMock.js"); 
